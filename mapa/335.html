@@ -12,7 +12,8 @@
   #info { position:absolute; top:10px; left:50%; transform:translateX(-50%);
            background:white; padding:8px 16px; border-radius:20px;
            box-shadow:0 2px 8px rgba(0,0,0,0.3); z-index:1000;
-           font-family:sans-serif; font-size:14px; font-weight:bold; }
+           font-family:sans-serif; font-size:14px; font-weight:bold;
+           white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -20,15 +21,19 @@
 <div id="map"></div>
 <script>
 var map = L.map('map').setView([-5.824751692307692, -35.31691484615384], 17);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap'
+
+// Google Maps Satellite + Roads (híbrido)
+L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+  attribution: '© Google Maps',
+  maxZoom: 21
 }).addTo(map);
+
 var coords = [[-5.825101, -35.317408], [-5.825125, -35.317391], [-5.825153, -35.317242], [-5.825253, -35.316862], [-5.825403, -35.316293], [-5.825477, -35.315967], [-5.824117, -35.315471], [-5.82346, -35.316815], [-5.824135, -35.317159], [-5.824277, -35.317229], [-5.824418, -35.317288], [-5.824752, -35.31736], [-5.825101, -35.317408]];
 var polygon = L.polygon(coords, {
   color: '#4285F4',
   fillColor: '#4285F4',
-  fillOpacity: 0.4,
-  weight: 2
+  fillOpacity: 0.35,
+  weight: 3
 }).addTo(map);
 map.fitBounds(polygon.getBounds());
 </script>

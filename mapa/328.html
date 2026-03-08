@@ -12,7 +12,8 @@
   #info { position:absolute; top:10px; left:50%; transform:translateX(-50%);
            background:white; padding:8px 16px; border-radius:20px;
            box-shadow:0 2px 8px rgba(0,0,0,0.3); z-index:1000;
-           font-family:sans-serif; font-size:14px; font-weight:bold; }
+           font-family:sans-serif; font-size:14px; font-weight:bold;
+           white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -20,15 +21,19 @@
 <div id="map"></div>
 <script>
 var map = L.map('map').setView([-5.863759590909091, -35.344903227272724], 17);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap'
+
+// Google Maps Satellite + Roads (híbrido)
+L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+  attribution: '© Google Maps',
+  maxZoom: 21
 }).addTo(map);
+
 var coords = [[-5.864255, -35.346446], [-5.864391, -35.346435], [-5.864356, -35.346168], [-5.864304, -35.345952], [-5.86423, -35.345641], [-5.864147, -35.34536], [-5.864051, -35.345101], [-5.863741, -35.344404], [-5.863637, -35.344184], [-5.863365, -35.343739], [-5.863012, -35.343291], [-5.862615, -35.342821], [-5.862511, -35.342915], [-5.862996, -35.34348], [-5.863251, -35.343814], [-5.863509, -35.344243], [-5.863701, -35.344565], [-5.863901, -35.345066], [-5.864076, -35.345549], [-5.864167, -35.345925], [-5.86424, -35.346326], [-5.864255, -35.346446]];
 var polygon = L.polygon(coords, {
   color: '#4285F4',
   fillColor: '#4285F4',
-  fillOpacity: 0.4,
-  weight: 2
+  fillOpacity: 0.35,
+  weight: 3
 }).addTo(map);
 map.fitBounds(polygon.getBounds());
 </script>
