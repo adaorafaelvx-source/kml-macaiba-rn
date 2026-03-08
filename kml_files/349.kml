@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>349</name>
+    <Style id="s">
+      <LineStyle><color>ffF48542</color><width>2</width></LineStyle>
+      <PolyStyle><color>7dF48542</color><fill>1</fill><outline>1</outline></PolyStyle>
+    </Style>
+    <Placemark>
+      <name>349</name>
+      <styleUrl>#s</styleUrl>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-35.314294,-5.818424,0
+                -35.315633,-5.818977,0
+                -35.315536,-5.819092,0
+                -35.31538,-5.819312,0
+                -35.315308,-5.81947,0
+                -35.314938,-5.819608,0
+                -35.314723,-5.819516,0
+                -35.314182,-5.819253,0
+                -35.313905,-5.819073,0
+                -35.314294,-5.818424,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+    </Placemark>
+  </Document>
+</kml>

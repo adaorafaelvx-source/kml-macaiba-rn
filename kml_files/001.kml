@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>001</name>
+    <Style id="s">
+      <LineStyle><color>ffF48542</color><width>2</width></LineStyle>
+      <PolyStyle><color>7dF48542</color><fill>1</fill><outline>1</outline></PolyStyle>
+    </Style>
+    <Placemark>
+      <name>001 - Salão do Reino</name>
+      <styleUrl>#s</styleUrl>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-35.342676,-5.857199,0
+                -35.342665,-5.857615,0
+                -35.34263,-5.858066,0
+                -35.342397,-5.858152,0
+                -35.341732,-5.858085,0
+                -35.341834,-5.857156,0
+                -35.341965,-5.857162,0
+                -35.34215,-5.857148,0
+                -35.342545,-5.857178,0
+                -35.342676,-5.857199,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+    </Placemark>
+  </Document>
+</kml>
