@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadra 495</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  body { margin:0; padding:0; }
+  #map { height:100vh; width:100vw; }
+  #info { position:absolute; top:10px; left:50%; transform:translateX(-50%);
+           background:white; padding:8px 16px; border-radius:20px;
+           box-shadow:0 2px 8px rgba(0,0,0,0.3); z-index:1000;
+           font-family:sans-serif; font-size:14px; font-weight:bold; }
+</style>
+</head>
+<body>
+<div id="info">Quadra 495</div>
+<div id="map"></div>
+<script>
+var map = L.map('map').setView([-5.8237554054054055, -35.31240321621622], 17);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+var coords = [[-5.821686, -35.313562], [-5.821537, -35.313694], [-5.821677, -35.313705], [-5.823127, -35.313344], [-5.823582, -35.313207], [-5.823228, -35.314256], [-5.824658, -35.314264], [-5.824282, -35.315533], [-5.825477, -35.315967], [-5.825547, -35.315976], [-5.825835, -35.315979], [-5.825892, -35.31598], [-5.826196, -35.315945], [-5.826262, -35.315931], [-5.826667, -35.315923], [-5.826992, -35.31593], [-5.827075, -35.315906], [-5.825926, -35.308538], [-5.825802, -35.306346], [-5.825465, -35.306376], [-5.824444, -35.307532], [-5.823816, -35.307584], [-5.823428, -35.307192], [-5.822753, -35.306674], [-5.822781, -35.307903], [-5.822706, -35.308817], [-5.822619, -35.309159], [-5.822364, -35.31063], [-5.822108, -35.312148], [-5.822049, -35.312524], [-5.82202, -35.312701], [-5.821974, -35.312905], [-5.821918, -35.313058], [-5.821846, -35.313269], [-5.821785, -35.313404], [-5.82174, -35.313495], [-5.821686, -35.313562]];
+var polygon = L.polygon(coords, {
+  color: '#4285F4',
+  fillColor: '#4285F4',
+  fillOpacity: 0.4,
+  weight: 2
+}).addTo(map);
+map.fitBounds(polygon.getBounds());
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadra 479</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  body { margin:0; padding:0; }
+  #map { height:100vh; width:100vw; }
+  #info { position:absolute; top:10px; left:50%; transform:translateX(-50%);
+           background:white; padding:8px 16px; border-radius:20px;
+           box-shadow:0 2px 8px rgba(0,0,0,0.3); z-index:1000;
+           font-family:sans-serif; font-size:14px; font-weight:bold; }
+</style>
+</head>
+<body>
+<div id="info">Quadra 479</div>
+<div id="map"></div>
+<script>
+var map = L.map('map').setView([-5.852828355555555, -35.33114684444444], 17);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+var coords = [[-5.850353, -35.330515], [-5.850358, -35.330569], [-5.850369, -35.330655], [-5.850422, -35.330853], [-5.850353, -35.33103], [-5.850182, -35.331046], [-5.850166, -35.331186], [-5.85023, -35.331416], [-5.850385, -35.331567], [-5.850684, -35.331749], [-5.851372, -35.331953], [-5.851842, -35.332436], [-5.852124, -35.332725], [-5.852317, -35.333224], [-5.852338, -35.333551], [-5.852237, -35.333948], [-5.852071, -35.334302], [-5.852098, -35.334512], [-5.852285, -35.334844], [-5.85245, -35.335021], [-5.852551, -35.335375], [-5.855943, -35.334104], [-5.855392, -35.332903], [-5.855141, -35.33235], [-5.854953, -35.331839], [-5.854789, -35.330981], [-5.854639, -35.330113], [-5.854541, -35.329774], [-5.85447, -35.32954], [-5.854338, -35.329232], [-5.854237, -35.329031], [-5.854191, -35.328931], [-5.854147, -35.328868], [-5.854121, -35.32884], [-5.854086, -35.328837], [-5.854061, -35.328853], [-5.854058, -35.328885], [-5.854129, -35.329066], [-5.854205, -35.329247], [-5.854304, -35.329492], [-5.854249, -35.329511], [-5.854075, -35.329091], [-5.853367, -35.329363], [-5.8523, -35.329765], [-5.850353, -35.330515]];
+var polygon = L.polygon(coords, {
+  color: '#4285F4',
+  fillColor: '#4285F4',
+  fillOpacity: 0.4,
+  weight: 2
+}).addTo(map);
+map.fitBounds(polygon.getBounds());
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadra 500</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  body { margin:0; padding:0; }
+  #map { height:100vh; width:100vw; }
+  #info { position:absolute; top:10px; left:50%; transform:translateX(-50%);
+           background:white; padding:8px 16px; border-radius:20px;
+           box-shadow:0 2px 8px rgba(0,0,0,0.3); z-index:1000;
+           font-family:sans-serif; font-size:14px; font-weight:bold; }
+</style>
+</head>
+<body>
+<div id="info">Quadra 500</div>
+<div id="map"></div>
+<script>
+var map = L.map('map').setView([-5.8439611875, -35.319477625], 17);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+var coords = [[-5.842431, -35.320217], [-5.844042, -35.320689], [-5.84432, -35.31997], [-5.844758, -35.31981], [-5.845238, -35.319885], [-5.845665, -35.319788], [-5.845868, -35.31952], [-5.84574, -35.318951], [-5.845398, -35.318544], [-5.844672, -35.318393], [-5.84352, -35.318243], [-5.842452, -35.318715], [-5.842217, -35.319016], [-5.842271, -35.319606], [-5.842356, -35.320078], [-5.842431, -35.320217]];
+var polygon = L.polygon(coords, {
+  color: '#4285F4',
+  fillColor: '#4285F4',
+  fillOpacity: 0.4,
+  weight: 2
+}).addTo(map);
+map.fitBounds(polygon.getBounds());
+</script>
+</body>
+</html>
